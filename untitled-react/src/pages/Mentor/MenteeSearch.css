@@ -1,0 +1,234 @@
+.mentee-search-dashboard {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.search-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.search-box-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 20px;
+  padding-right: 50px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #003366;
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+}
+
+.search-icon-btn {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.filter-toggle-btn {
+  padding: 0 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-toggle-btn:hover {
+  background: #f1f5f9;
+  color: #003366;
+}
+
+/* Filters */
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-pill {
+  padding: 6px 14px;
+  background: #f1f5f9;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-pill:hover {
+  background: #e2e8f0;
+}
+
+.filter-pill.active {
+  background: #003366;
+  color: #ffffff;
+}
+
+/* Mentee Grid */
+.mentee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.mentee-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #f1f5f9;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mentee-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 51, 102, 0.1);
+}
+
+.mentee-year-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(0, 51, 102, 0.05);
+  color: #003366;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mentee-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mentee-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+}
+
+.mentee-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.mentee-major {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.mentee-goals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.goal-tag {
+  background: #f8fafc;
+  color: #475569;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid #f1f5f9;
+}
+
+.mentee-view-more {
+  width: 100%;
+  padding: 10px;
+  background: #003366;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.mentee-view-more:hover {
+  background: #002244;
+  transform: scale(1.02);
+}
+
+@media (max-width: 640px) {
+  .search-container {
+    flex-direction: column;
+  }
+}
