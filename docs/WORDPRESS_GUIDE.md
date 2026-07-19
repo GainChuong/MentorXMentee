@@ -35,12 +35,12 @@ Bạn cần khai báo cho React biết thư mục chứa app React trên WordPre
 * *Ví dụ:* Nếu trang WordPress chạy tại local là `http://localhost/giangk244111398/` và bạn muốn app chạy tại `/mentor-app/`, thì Subfolder URL là: `/giangk244111398/mentor-app/`.
 * *Ví dụ trên host thật:* Nếu website là `https://tenmiencuaban.com/` và muốn chạy app tại `/mentor-app/`, thì Subfolder URL là: `/mentor-app/`.
 
-Chỉnh sửa Subfolder URL này ở 2 nơi sau:
-1. Mở file **`package.json`**, sửa dòng `homepage` (dòng 5):
+Chỉnh sửa cấu hình đường dẫn ở 2 nơi sau:
+1. Trong file **`package.json`**, đặt giá trị `homepage` là `.` (để khi chạy local `npm run dev` không bị lỗi đường dẫn ảnh):
    ```json
-   "homepage": "/giangk244111398/mentor-app/",
+   "homepage": ".",
    ```
-2. Mở file **`patch_build_paths.js`**, sửa biến `TARGET_PREFIX` ở đầu file tương ứng:
+2. Mở file **`patch_build_paths.js`**, sửa biến `TARGET_PREFIX` ở đầu file thành đường dẫn WordPress thực tế của bạn (đây là nơi script sẽ vá ảnh khi build):
    ```javascript
    const TARGET_PREFIX = '/giangk244111398/mentor-app/';
    ```
