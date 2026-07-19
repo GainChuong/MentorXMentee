@@ -54,51 +54,69 @@ Lệnh này biên dịch code vào thư mục `/build` và chạy script tự đ
 
 ---
 
-## Ⅳ. UPLOAD & NHÚNG VÀO WORDPRESS BẰNG PLUGIN (WPCode)
+## Ⅳ. UPLOAD & NHÚNG VÀO WORDPRESS BẰNG FILE PHP TEMPLATE (KHÔNG CẦN PLUGIN)
 
-Hiện tại hệ thống sử dụng plugin **WPCode** để chèn ứng dụng React vào trang. Đây là các bước thao tác chi tiết:
+Phương pháp này tạo một **Page Template riêng bằng PHP** trực tiếp trong Theme của WordPress. Đây là cách làm tối ưu và chuyên nghiệp nhất, giúp ứng dụng React chạy độc lập, mượt mà và không phụ thuộc vào bất kỳ plugin bên thứ ba nào.
 
 ### Bước 1: Upload thư mục Build lên WordPress
 1. Mở quản lý tệp tin của WordPress (XAMPP hoặc File Manager trên Hosting).
-2. Tại thư mục gốc của WordPress (nơi chứa thư mục `wp-content`, `wp-admin`...), tạo một thư mục mới tên là **`mentor-app`** (trùng với folder bạn cấu hình ở Bước 1).
+2. Tại thư mục gốc của WordPress (nơi chứa thư mục `wp-content`, `wp-admin`...), tạo một thư mục mới tên là **`mentor-app`** (trùng với folder bạn cấu hình ở Bước 1 của phần III).
 3. Tải toàn bộ nội dung nằm **bên trong** thư mục `build/` của React lên thư mục `mentor-app` vừa tạo.
 
-### Bước 2: Cài đặt Plugin WPCode trên WordPress
-1. Đăng nhập vào trang quản lý WordPress (`yourdomain/wp-admin`).
-2. Nhấn vào **Gói mở rộng (Plugins)** ở menu bên trái -> click chọn **Cài mới (Add New)**.
-3. Tại ô tìm kiếm ở góc trên bên phải, gõ từ khóa: **`WPCode`**.
-4. Tìm đúng plugin có tên **`WPCode – Insert Headers and Footers + Custom Code Snippets`** -> click vào nút **Cài đặt ngay (Install Now)**.
-5. Sau khi cài xong, click nút **Kích hoạt (Activate)**.
+### Bước 2: Tạo file Page Template trong Theme WordPress
+1. Truy cập vào thư mục giao diện (theme) đang hoạt động trên WordPress của bạn:
+   * *Đường dẫn cục bộ (XAMPP):* `C:\xampp\htdocs\giangk244111398\wp-content\themes\twentytwentyfive\`
+   * *Đường dẫn trên hosting:* `/wp-content/themes/tên-theme-đang-dùng/`
+2. Tạo một file mới đặt tên là **`page-mentor-app.php`**.
+3. Dán toàn bộ nội dung code PHP dưới đây vào file đó và lưu lại:
 
-### Bước 3: Thiết lập Code Snippet trong WPCode
-1. Nhìn menu bên trái WordPress, tìm và click vào mục **Code Snippets** -> chọn **Add Snippet**.
-2. Di chuột đến phần **Add Your Custom Code (New Snippet)** -> click chọn nút **Use Snippet**.
-3. Thiết lập các mục sau:
-   * **Tiêu đề (Title):** Nhập tên tùy ý, ví dụ: `Nhúng App MentorXMentee`.
-   * **Code Type (Kiểu code):** Click vào menu thả xuống và chọn **`HTML Snippet`**.
-   * **Code Preview (Ô viết code):** Dán đoạn mã HTML liên kết ứng dụng React dưới đây vào:
-     ```html
-     <!-- Thẻ HTML gốc để React render giao diện -->
-     <div id="app"></div>
+```php
+<?php
+/**
+ * Template Name: Mentor App (Full React)
+ * Description: Renders the React MentorXMentee app without WordPress header/footer (Blank Canvas).
+ */
+?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentorXMentee - Khoa Hệ Thống Thông Tin - UEL</title>
+    
+    <!-- Liên kết file CSS của React (Lưu ý: Luôn kiểm tra và cập nhật mã hash .css thực tế trong thư mục mentor-app/static/css/) -->
+    <link rel="stylesheet" href="/giangk244111398/mentor-app/static/css/main.3b5ebeb9.css">
+    
+    <style>
+        /* Reset các style dư thừa của WordPress để React hiển thị tràn màn hình */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow-x: hidden; }
+        #app { width: 100%; min-height: 100vh; }
+    </style>
+    <?php wp_head(); ?>
+</head>
+<body style="margin: 0; padding: 0;">
+    <!-- React App sẽ render vào thẻ div này -->
+    <div id="app"></div>
 
-     <!-- Liên kết file CSS của React (Lưu ý kiểm tra và cập nhật mã hash .3b5ebeb9.css theo file CSS thực tế trong mentor-app/static/css) -->
-     <link rel="stylesheet" href="/giangk244111398/mentor-app/static/css/main.3b5ebeb9.css">
+    <!-- Liên kết file JS của React (Lưu ý: Luôn kiểm tra và cập nhật mã hash .js thực tế trong thư mục mentor-app/static/js/) -->
+    <script defer src="/giangk244111398/mentor-app/static/js/main.7e18508f.js"></script>
+    
+    <?php wp_footer(); ?>
+</body>
+</html>
+```
 
-     <!-- Liên kết file JS của React (Lưu ý kiểm tra và cập nhật mã hash .7e18508f.js theo file JS thực tế trong mentor-app/static/js) -->
-     <script defer src="/giangk244111398/mentor-app/static/js/main.7e18508f.js"></script>
-     ```
-4. Cuộn xuống phần **Cài đặt chèn (Insertion)** bên dưới:
-   * Tại mục **Insert Method** (Phương thức chèn), click chọn **`Shortcode`**.
-5. Cuộn lên đầu trang:
-   * Gạt công tắc bên cạnh nút Save từ **Inactive** (Chưa kích hoạt) sang **Active** (Kích hoạt).
-   * Nhấn nút **Save Snippet** (Lưu Snippet).
-6. Sau khi lưu, plugin sẽ hiển thị một đoạn Shortcode ở bên phải (Ví dụ: `[wpcode id="123"]`). Bạn hãy **sao chép (Copy)** đoạn Shortcode này.
+> [!IMPORTANT]
+> **Lưu ý về mã Hash (tên file):** Mỗi lần bạn chạy `npm run build`, React có thể sinh ra tên file CSS và JS với các mã hash mới (ví dụ: `main.a1b2c3d4.css`). Bạn cần kiểm tra trong thư mục `mentor-app/static/css/` và `static/js/` trên host để cập nhật tên file chính xác vào file `page-mentor-app.php` tương ứng.
 
-### Bước 4: Tạo trang mới và nhúng Shortcode để chạy ứng dụng
-1. Nhấp vào **Trang (Pages)** ở menu bên trái -> chọn **Thêm trang mới (Add New Page)**.
-2. Đặt tiêu đề cho trang (Ví dụ: `mentor-app`).
-3. Click vào nút **dấu cộng (+)** trong trình soạn thảo trang để thêm Block mới -> tìm kiếm và click chọn block **Shortcode**.
-4. Dán đoạn mã Shortcode bạn vừa sao chép ở Bước 3 (Ví dụ: `[wpcode id="123"]`) vào ô nhập liệu của block Shortcode.
-5. Click vào nút **Đăng (Publish)** ở góc trên bên phải màn hình.
-6. Click vào **Xem trang (View Page)** để trải nghiệm ứng dụng React đã nhúng thành công và chạy mượt mà ngay trên WordPress của bạn!
+### Bước 3: Kích hoạt Trang trên WordPress Admin
+1. Đăng nhập vào trang quản lý WordPress (`wp-admin`).
+2. Vào mục **Trang (Pages)** ở menu bên trái -> chọn **Thêm trang mới (Add New Page)**.
+3. Đặt tiêu đề cho trang (Ví dụ: `mentor-app`).
+4. Nhìn sang cột cấu hình bên phải:
+   * Tại phần **Bản mẫu (Template)**, nhấp vào menu thả xuống và chọn **`Mentor App (Full React)`** (Đây là template do file `page-mentor-app.php` tự động đăng ký với WordPress).
+5. Nhấp nút **Đăng (Publish)** ở góc trên bên phải.
+6. Truy cập đường dẫn trang vừa tạo (Ví dụ: `yourdomain.com/mentor-app`) để trải nghiệm ứng dụng React hiển thị độc lập hoàn toàn, mượt mà và cực kỳ chuyên nghiệp!
+
 
