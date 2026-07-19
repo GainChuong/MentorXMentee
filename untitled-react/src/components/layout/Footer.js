@@ -55,12 +55,12 @@ const Footer = () => {
         {/* Inner bottom section (inside blue background) */}
         <div className="footer-inner-bottom">
           <div className="footer-inner-bottom-left">
-            <img src="/uellogofinal0311146-9sok-200h.png" alt="UEL Logo" className="uel-seal" />
+            <img src="./uellogofinal0311146-9sok-200h.png" alt="UEL Logo" className="uel-seal" />
           </div>
 
           <div className="footer-social">
             <span className="footer-social-label">Theo dõi ngay</span>
-            <img src="/Untitled-1-05 1.png" alt="Social Media" style={{ height: '32px', cursor: 'pointer' }} />
+            <img src="./Untitled-1-05 1.png" alt="Social Media" style={{ height: '32px', cursor: 'pointer' }} />
           </div>
         </div>
       </footer>

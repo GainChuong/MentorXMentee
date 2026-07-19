@@ -147,7 +147,7 @@ const Header = () => {
           <div className="header-inner">
             <div className="header-logo-section">
               <Link to="/" className="header-logo">
-                <img src="/uel11143-imot-200h.png" alt="UEL Logo" />
+                <img src="./uel11143-imot-200h.png" alt="UEL Logo" />
               </Link>
               <div className="header-logo-text">
                 <span className="dept-name">KHOA HỆ THỐNG THÔNG TIN</span>

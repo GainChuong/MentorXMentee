@@ -20,7 +20,7 @@ const Login = () => {
   return (
     <div className="login-page">
       <img
-        src="/rectangle1191143-ptu-600h.png"
+        src="./rectangle1191143-ptu-600h.png"
         alt=""
         className="login-bg"
         aria-hidden="true"
@@ -31,7 +31,7 @@ const Login = () => {
       <div className="login-content">
         <div className="login-card">
           <div className="login-card-logo">
-            <img src="/uel11143-imot-200h.png" alt="UEL Logo" />
+            <img src="./uel11143-imot-200h.png" alt="UEL Logo" />
             <h1>Đăng Nhập</h1>
             <p>Mentor x Mentee – Kết nối tri thức</p>
           </div>

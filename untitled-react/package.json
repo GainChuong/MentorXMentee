@@ -2,6 +2,7 @@
   "name": "untitled",
   "version": "1.0.0",
   "private": true,
+  "homepage": "/giangk244111398/mentor-app/",
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "react": "^17.0.2",
@@ -14,7 +15,7 @@
   "scripts": {
     "start": "craco start",
     "dev": "npm start",
-    "build": "craco build",
+    "build": "craco build && node patch_build_paths.js",
     "test": "craco test --env=jsdom",
     "eject": "craco eject"
   },

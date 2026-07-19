@@ -12,7 +12,7 @@
 }
 
 .header-top {
-  background: #00468b; /* Primary UEL Blue */
+  background: var(--color-navy); /* Primary UEL Blue */
   height: var(--header-top-height);
   display: flex;
   align-items: center;
@@ -76,13 +76,13 @@
 }
 
 .header-logo-brand .brand-uel {
-  color: #00468b;
+  color: var(--color-navy);
   font-weight: 900;
   font-size: 24px;
 }
 
 .header-logo-brand .brand-alumni {
-  color: #00468b;
+  color: var(--color-navy);
   font-weight: 500;
   font-size: 10px;
   letter-spacing: 1px;
@@ -93,7 +93,7 @@
 }
 
 .header-logo-text .dept-name {
-  color: #00468b;
+  color: var(--color-navy);
   font-weight: 800;
   font-size: 20px;
   letter-spacing: -0.5px;
@@ -132,8 +132,8 @@
 .header-nav a.active,
 .nav-dropdown-trigger:hover,
 .nav-dropdown-trigger.active {
-  color: #00468b;
-  border-bottom-color: #f39c12; /* Match the orange underline in image */
+  color: var(--color-navy);
+  border-bottom-color: var(--color-orange); /* Match the orange underline in image */
 }
 
 /* Nav Submenu */
@@ -161,8 +161,8 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: #f39c12;
-  box-shadow: 0 0 10px rgba(243, 156, 18, 0.6);
+  background: var(--color-orange);
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.6);
   z-index: 2;
 }
 
@@ -184,7 +184,7 @@
 
 .nav-submenu a:hover {
   background: #f8f9fa;
-  color: #00468b;
+  color: var(--color-navy);
 }
 
 /* Actions */
@@ -347,8 +347,8 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: #f39c12; /* Glowing Orange */
-  box-shadow: 0 0 12px rgba(243, 156, 18, 0.6);
+  background: var(--color-orange); /* Glowing Orange */
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.6);
   z-index: 2;
 }
 
@@ -388,15 +388,15 @@
 }
 
 .role-badge.role-alumni {
-  background: rgba(0, 70, 139, 0.1);
-  color: #00468b;
-  border: 1px solid rgba(0, 70, 139, 0.2);
+  background: rgba(15, 50, 95, 0.1);
+  color: var(--color-navy);
+  border: 1px solid rgba(15, 50, 95, 0.2);
 }
 
 .role-badge.role-mentor {
-  background: rgba(243, 156, 18, 0.1);
-  color: #f39c12;
-  border: 1px solid rgba(243, 156, 18, 0.2);
+  background: rgba(249, 115, 22, 0.1);
+  color: var(--color-orange);
+  border: 1px solid rgba(249, 115, 22, 0.2);
 }
 
 .role-badge.role-mentor-sub {
@@ -441,31 +441,31 @@
 
 .dropdown-item:hover {
   background: #f1f5f9;
-  color: #00468b;
+  color: var(--color-navy);
   transform: translateX(4px);
 }
 
 .dropdown-item:hover {
   background: #f1f5f9;
-  color: #00468b;
+  color: var(--color-navy);
   padding-left: 24px;
 }
 
 .btn-login-dropdown {
-  background: linear-gradient(135deg, #00468b 0%, #0056b3 100%) !important;
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%) !important;
   color: white !important;
   justify-content: center;
   margin: 8px;
   width: calc(100% - 16px) !important;
   border-radius: 10px !important;
-  box-shadow: 0 4px 12px rgba(0, 70, 139, 0.2);
+  box-shadow: 0 4px 12px rgba(15, 50, 95, 0.2);
   transform: none !important;
 }
 
 .btn-login-dropdown:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 15px rgba(0, 70, 139, 0.3);
-  background: linear-gradient(135deg, #0056b3 0%, #0066cc 100%) !important;
+  box-shadow: 0 6px 15px rgba(15, 50, 95, 0.3);
+  background: linear-gradient(135deg, var(--color-navy-light) 0%, var(--color-navy-dark) 100%) !important;
 }
 
 .header-dropdown .divider {

@@ -124,7 +124,7 @@ const News = () => {
     <div className="news-page">
       {/* Hero Banner */}
       <section className="news-hero-banner">
-        <img src="/Rectangle 119.png" alt="News hero" className="news-hero-img" />
+        <img src="./Rectangle 119.png" alt="News hero" className="news-hero-img" />
         <div className="news-hero-overlay" />
         <div className="news-hero-text">
           <h1>TIN TỨC & SỰ KIỆN</h1>

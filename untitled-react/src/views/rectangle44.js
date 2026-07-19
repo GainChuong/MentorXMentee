@@ -21,7 +21,7 @@ const Rectangle44 = (props) => {
       </Helmet>
       <div className="rectangle44-thq-dummy-container-elm">
         <img
-          src="/rectangle441150-n98-500h.png"
+          src="./rectangle441150-n98-500h.png"
           alt="Rectangle441150"
           className="rectangle44-thq-rectangle44-elm"
         />

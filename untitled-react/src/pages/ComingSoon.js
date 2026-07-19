@@ -7,7 +7,7 @@ const ComingSoon = ({ title }) => {
     <div className="coming-soon-container">
       <div className="coming-soon-content">
         <div className="coming-soon-image-wrapper">
-          <img src="/UEL (5) 1.png" alt="UEL Alumni" className="coming-soon-logo" />
+          <img src="./UEL (5) 1.png" alt="UEL Alumni" className="coming-soon-logo" />
           <span className="coming-soon-badge">Sắp ra mắt</span>
         </div>
         <h2 className="coming-soon-title">{title}</h2>

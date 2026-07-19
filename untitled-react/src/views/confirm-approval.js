@@ -30,19 +30,19 @@ const ConfirmApproval = (props) => {
         </div>
         <div className="confirm-approval-thq-button-cookies-elm2">
           <img
-            src="/rectangle401149-ccn8-200h.png"
+            src="./rectangle401149-ccn8-200h.png"
             alt="Rectangle401149"
             className="confirm-approval-thq-rectangle40-elm"
           />
           <span className="confirm-approval-thq-text-elm4">Submit</span>
         </div>
         <img
-          src="/rectangle541149-k8eg-200h.png"
+          src="./rectangle541149-k8eg-200h.png"
           alt="Rectangle541149"
           className="confirm-approval-thq-rectangle54-elm"
         />
         <img
-          src="/rectangle551149-4z6r-500h.png"
+          src="./rectangle551149-4z6r-500h.png"
           alt="Rectangle551149"
           className="confirm-approval-thq-rectangle55-elm"
         />
@@ -50,7 +50,7 @@ const ConfirmApproval = (props) => {
           Suggestions for Revision
         </span>
         <img
-          src="/button11150-703-200h.png"
+          src="./button11150-703-200h.png"
           alt="button11150"
           className="confirm-approval-thq-button1-elm"
         />

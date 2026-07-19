@@ -21,7 +21,7 @@ const Button1 = (props) => {
       </Helmet>
       <div className="button1-thq-dummy-container-elm">
         <img
-          src="/button11150-5xsc-200h.png"
+          src="./button11150-5xsc-200h.png"
           alt="button11150"
           className="button1-thq-button1-elm"
         />

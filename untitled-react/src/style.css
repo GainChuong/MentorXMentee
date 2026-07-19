@@ -32,13 +32,13 @@
   --dl-layout-space-oneandhalfunits: 24px;
 
   /* === MentorxMentee Extended Tokens === */
-  --color-navy: #1B3A5C;
-  --color-navy-dark: #14304D;
-  --color-navy-light: #2A5078;
-  --color-orange: #E65103;
-  --color-orange-hover: #D14A03;
-  --color-orange-light: #F5D1B0;
-  --color-orange-bg: #FFF3E8;
+  --color-navy: #0f325f;
+  --color-navy-dark: #0a2240;
+  --color-navy-light: #1e4a7d;
+  --color-orange: #f97316;
+  --color-orange-hover: #ea580c;
+  --color-orange-light: #fed7aa;
+  --color-orange-bg: #fff7ed;
   --color-bg-light: #F5F5F5;
   --color-bg-page: #FBFAF9;
   --color-white: #FFFFFF;
@@ -52,7 +52,7 @@
   --color-warning: #FFC107;
   --color-info: #17A2B8;
 
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family: 'Montserrat', sans-serif;
   --font-condensed: 'Roboto Condensed', sans-serif;
   --header-height: 72px;
   --footer-min-height: 320px;

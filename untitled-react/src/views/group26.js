@@ -26,18 +26,18 @@ const Group26 = (props) => {
         </span>
         <div className="group26-thq-group25-elm">
           <img
-            src="/ellipse91150-4qnq-200w.png"
+            src="./ellipse91150-4qnq-200w.png"
             alt="Ellipse91150"
             className="group26-thq-ellipse9-elm"
           />
           <img
-            src="/check11150-0ynq-300h.png"
+            src="./check11150-0ynq-300h.png"
             alt="check11150"
             className="group26-thq-check1-elm"
           />
         </div>
         <img
-          src="/button21150-qk9e-200h.png"
+          src="./button21150-qk9e-200h.png"
           alt="button21150"
           className="group26-thq-button2-elm"
         />

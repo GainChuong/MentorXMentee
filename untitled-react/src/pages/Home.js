@@ -119,7 +119,7 @@ const Home = () => {
           {/* Main Featured News (Horizontal) */}
           <Link to="/news/1" className="main-featured-news-row">
             <div className="main-featured-img">
-              <img src="/Rectangle 46.png" alt="Vietnam Young Lions" />
+              <img src="./Rectangle 46.png" alt="Vietnam Young Lions" />
             </div>
             <div className="main-featured-content-dark">
               <span className="tag-orange">Tin tức</span>
@@ -131,21 +131,21 @@ const Home = () => {
           {/* Sub News Grid (3 items row) */}
           <div className="sub-news-row">
             <Link to="/news/2" className="sub-news-card-col">
-              <div className="sub-news-img"><img src="/Rectangle 120.png" alt="Tân Phó Giáo sư" /></div>
+              <div className="sub-news-img"><img src="./Rectangle 120.png" alt="Tân Phó Giáo sư" /></div>
               <div className="sub-news-content">
                 <span className="tag-orange-text">Tin tức</span>
                 <h4>Chúc mừng hai Tân Phó Giáo sư đầu tiên của Khoa HTTT: PGS.TS Lê Hoành Sử và PGS.TS Hồ Trung Thành</h4>
               </div>
             </Link>
             <Link to="/news/3" className="sub-news-card-col">
-              <div className="sub-news-img"><img src="/Rectangle 121.png" alt="Bằng Nhân Trí GLC 2025" /></div>
+              <div className="sub-news-img"><img src="./Rectangle 121.png" alt="Bằng Nhân Trí GLC 2025" /></div>
               <div className="sub-news-content">
                 <span className="tag-orange-text">Tin tức</span>
                 <h4>Chúc mừng Cựu sinh viên Bằng Nhân Trí đoạt giải Quán quân Global Leadership Challenge 2025</h4>
               </div>
             </Link>
             <Link to="/news/4" className="sub-news-card-col">
-              <div className="sub-news-img"><img src="/Rectangle 50.png" alt="SAP Vietnam" /></div>
+              <div className="sub-news-img"><img src="./Rectangle 50.png" alt="SAP Vietnam" /></div>
               <div className="sub-news-content">
                 <span className="tag-orange-text">Tin tức</span>
                 <h4>Dấu ấn sinh viên UEL tại Diễn đàn Cộng đồng Học thuật SAP Việt Nam 2025</h4>
@@ -163,7 +163,7 @@ const Home = () => {
             {/* Main Featured Event */}
             <Link to="/news/101" className="main-featured-event-card">
               <div className="main-event-img-wrapper">
-                <img src="/Rectangle 59.png" alt="Ngày Về 2026" className="main-event-img" />
+                <img src="./Rectangle 59.png" alt="Ngày Về 2026" className="main-event-img" />
                 <div className="main-event-date-badge">09.05.2026</div>
               </div>
               <div className="main-event-content-dark">
@@ -177,21 +177,21 @@ const Home = () => {
             {/* Sub Events List */}
             <div className="sub-events-list">
               <Link to="/news/103" className="sub-event-item">
-                <div className="sub-event-img"><img src="/toadam.png" alt="Tọa đàm" /></div>
+                <div className="sub-event-img"><img src="./toadam.png" alt="Tọa đàm" /></div>
                 <div className="sub-event-content">
                   <span className="tag-orange-bg">21.03.2026</span>
                   <h4>Tọa đàm: Các hướng nghiên cứu ứng dụng trong đào tạo HTTT & TMĐT</h4>
                 </div>
               </Link>
               <Link to="/news/102" className="sub-event-item">
-                <div className="sub-event-img"><img src="/681212572_1360495922778615_7166935161293770380_n.jpg" alt="Hoa Mộc Miên" /></div>
+                <div className="sub-event-img"><img src="./681212572_1360495922778615_7166935161293770380_n.jpg" alt="Hoa Mộc Miên" /></div>
                 <div className="sub-event-content">
                   <span className="tag-orange-bg">01.05.2026</span>
                   <h4>Chiến dịch tình nguyện "Hoa Mộc Miên" lần thứ VIII</h4>
                 </div>
               </Link>
               <Link to="/news/7" className="sub-event-item">
-                <div className="sub-event-img"><img src="/Rectangle 128.png" alt="Văn nghệ" /></div>
+                <div className="sub-event-img"><img src="./Rectangle 128.png" alt="Văn nghệ" /></div>
                 <div className="sub-event-content">
                   <span className="tag-orange-bg">15.03.2025</span>
                   <h4>Đội văn nghệ IAT ghi dấu ấn đậm nét tại Hội diễn Văn nghệ UEL 2025</h4>
@@ -216,7 +216,7 @@ const Home = () => {
           <div className="mentor-banner-figma-overlay"></div>
           <div className="mentor-banner-figma-content">
             <div className="mentor-icon-figma">
-              <img src="/Rectangle 70.png" alt="Mentor icon" />
+              <img src="./Rectangle 70.png" alt="Mentor icon" />
             </div>
             <div className="mentor-banner-figma-body">
               <h3>ĐĂNG KÝ TRỞ THÀNH MENTOR</h3>
@@ -246,7 +246,7 @@ const Home = () => {
           {/* Diễn đàn thảo luận */}
           <Link to="/forum" className="forum-card-figma">
             <div className="forum-icon-figma">
-              <img src="/Rectangle 69.png" alt="Diễn đàn" />
+              <img src="./Rectangle 69.png" alt="Diễn đàn" />
             </div>
             <div className="forum-card-text">
               <h3>DIỄN ĐÀN THẢO LUẬN</h3>
@@ -261,7 +261,7 @@ const Home = () => {
     {/* Chung tay xây dựng */}
     <section className="contribute-banner-figma">
       <div className="contribute-banner-bg">
-        <img src="/Rectangle 75.png" alt="FIS event" />
+        <img src="./Rectangle 75.png" alt="FIS event" />
       </div>
       <div className="contribute-banner-overlay"></div>
       <div className="contribute-banner-content">

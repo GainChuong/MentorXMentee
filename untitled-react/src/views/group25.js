@@ -21,12 +21,12 @@ const Group25 = (props) => {
       </Helmet>
       <div className="group25-thq-group25-elm">
         <img
-          src="/ellipse91150-757a-200w.png"
+          src="./ellipse91150-757a-200w.png"
           alt="Ellipse91150"
           className="group25-thq-ellipse9-elm"
         />
         <img
-          src="/check11150-r5a8-300h.png"
+          src="./check11150-r5a8-300h.png"
           alt="check11150"
           className="group25-thq-check1-elm"
         />
