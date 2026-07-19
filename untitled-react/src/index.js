@@ -17,6 +17,13 @@ import Register from './pages/Register'
 import NotFound from './pages/NotFound'
 import News from './pages/News'
 import ComingSoon from './pages/ComingSoon'
+import MenteeSearch from './pages/Mentor/MenteeSearch'
+import MenteeApplications from './pages/Mentor/MenteeApplications'
+import MenteeManage from './pages/Mentor/MenteeManage'
+import MenteeCalendar from './pages/Mentor/MenteeCalendar'
+import MenteeProfile from './pages/Mentor/MenteeProfile'
+import MenteeProfileSelf from './pages/Mentor/MenteeProfileSelf'
+import MenteeManageSlots from './pages/Mentor/MenteeManageSlots'
 import { UserProvider } from './context/UserContext'
 
 const App = () => {
@@ -39,7 +46,13 @@ const App = () => {
               <Route exact path="/donate" render={() => <ComingSoon title="Quyên góp" />} />
               <Route exact path="/jobs" render={() => <ComingSoon title="Cơ hội việc làm" />} />
               <Route exact path="/dashboard" render={() => <ComingSoon title="Dashboard" />} />
-              <Route exact path="/profile" render={() => <ComingSoon title="Hồ sơ cá nhân" />} />
+              <Route exact path="/profile" component={MenteeProfileSelf} />
+              <Route exact path="/mentees/search" component={MenteeSearch} />
+              <Route exact path="/mentees/applications" component={MenteeApplications} />
+              <Route exact path="/mentees/manage" component={MenteeManage} />
+              <Route exact path="/mentees/manage-slots" component={MenteeManageSlots} />
+              <Route exact path="/mentees/calendar" component={MenteeCalendar} />
+              <Route exact path="/mentees/profile/:id" component={MenteeProfile} />
               <Route component={NotFound} />
             </Switch>
           </Layout>

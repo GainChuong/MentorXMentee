@@ -15,6 +15,8 @@ import {
   Settings, 
   ChevronLeft, 
   ChevronRight, 
+  ChevronDown,
+  Filter,
   Share2, 
   Info,
   ShieldCheck,
@@ -139,6 +141,17 @@ export default function DashboardPage() {
         </div>
       </section>
 
+      {/* Mentor Toolbar */}
+      {isMentor && (
+        <div className="-mx-6 md:-mx-10 mb-8 -mt-6">
+          <div className="bg-[#1a5b96] py-3.5 flex justify-center gap-16 font-bold text-sm text-white shadow-md relative z-20">
+            <Link href="/dashboard/mentees/search" className="hover:text-white/80 transition-colors">Tìm kiếm Mentee</Link>
+            <Link href="/dashboard/mentees/applications" className="hover:text-white/80 transition-colors">Đơn đăng ký</Link>
+            <Link href="/dashboard/mentees/my-mentees" className="hover:text-white/80 transition-colors">Quản lý Mentee</Link>
+          </div>
+        </div>
+      )}
+
       {/* Network Metrics */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
         {[
@@ -154,15 +167,6 @@ export default function DashboardPage() {
         ))}
       </section>
 
-      {/* Stats Section */}
-      {isMentor && (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <UELStatCard title="ĐANG HỖ TRỢ" value={activeMenteesData.length} icon={Users} color="border-uel-blue" href="/dashboard/mentees/my-mentees" />
-          <UELStatCard title="YÊU CẦU MỚI" value={6} icon={FileText} color="border-uel-orange" href="/dashboard/mentees/applications" />
-          <UELStatCard title="CÒN TRỐNG" value={Math.max(0, capacity - activeMenteesData.length)} icon={CheckCircle} color="border-uel-blue" href="/dashboard/mentees/applications" />
-          <UELStatCard title="BUỔI HẸN" value="14:00" icon={Clock} color="border-uel-blue" href="/dashboard/mentees/my-mentees?openCalendar=true" />
-        </div>
-      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         {/* Left Column */}
@@ -215,36 +219,21 @@ export default function DashboardPage() {
               </Link>
             </div>
             
-            {isMentor ? (
-              <div className="bg-white p-8 border border-slate-100 rounded-3xl space-y-4 hover:shadow-xl hover:shadow-slate-200/50 transition-all group">
-                <div className="w-12 h-12 bg-uel-orange rounded-2xl flex items-center justify-center text-white shadow-lg shadow-uel-orange/20">
-                  <Search size={24} />
+            <div className="bg-slate-900 p-8 rounded-3xl space-y-4 shadow-2xl relative overflow-hidden group">
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-uel-orange mb-4">
+                  <UserPlus size={24} />
                 </div>
-                <h3 className="text-lg font-black text-slate-900 uppercase tracking-tight pt-2">TÌM KIẾM MENTEE</h3>
-                <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
-                  Chủ động tìm kiếm và kết nối với các sinh viên tiềm năng đang cần sự hướng dẫn từ kinh nghiệm của bạn.
+                <h3 className="text-lg font-black text-white uppercase tracking-tight">TRỞ THÀNH MENTOR</h3>
+                <p className="text-[11px] text-slate-400 leading-relaxed font-medium mb-4">
+                  Chia sẻ giá trị và dẫn dắt đàn em. Hãy đăng ký để trở thành Mentor chính thức.
                 </p>
-                <Link href="/dashboard/mentees/search" className="inline-flex items-center gap-2 text-[10px] font-black text-uel-orange hover:text-uel-blue transition-colors uppercase tracking-widest pt-2">
-                  TÌM KIẾM NGAY <ArrowUpRight size={14} />
+                <Link href="/dashboard/apply" className="inline-flex items-center gap-2 text-[10px] font-black text-uel-orange hover:text-white transition-colors uppercase tracking-widest">
+                  ĐĂNG KÝ NGAY <ArrowUpRight size={14} />
                 </Link>
               </div>
-            ) : (
-              <div className="bg-slate-900 p-8 rounded-3xl space-y-4 shadow-2xl relative overflow-hidden group">
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-uel-orange mb-4">
-                    <UserPlus size={24} />
-                  </div>
-                  <h3 className="text-lg font-black text-white uppercase tracking-tight">TRỞ THÀNH MENTOR</h3>
-                  <p className="text-[11px] text-slate-400 leading-relaxed font-medium mb-4">
-                    Chia sẻ giá trị và dẫn dắt đàn em. Hãy đăng ký để trở thành Mentor chính thức.
-                  </p>
-                  <Link href="/dashboard/apply" className="inline-flex items-center gap-2 text-[10px] font-black text-uel-orange hover:text-white transition-colors uppercase tracking-widest">
-                    ĐĂNG KÝ NGAY <ArrowUpRight size={14} />
-                  </Link>
-                </div>
-                <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-uel-orange/10 rounded-full blur-2xl group-hover:scale-125 transition-transform" />
-              </div>
-            )}
+              <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-uel-orange/10 rounded-full blur-2xl group-hover:scale-125 transition-transform" />
+            </div>
           </div>
         </div>
 

@@ -225,6 +225,28 @@
   filter: brightness(0) invert(1); /* Make it white */
 }
 
+.header-bell-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+
+.header-bell-btn:hover {
+  opacity: 0.8;
+}
+
+.header-bell-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
 .header-avatar-btn {
   width: 36px;
   height: 36px;
@@ -256,14 +278,18 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* User Grouping - "Stuck together" as requested */
+/* User Grouping - pill shape */
+.header-user-wrapper {
+  position: relative;
+}
+
 .header-user-group {
   display: flex;
   align-items: center;
   gap: 0;
   padding: 0;
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 50px; /* Full pill shape */
+  border-radius: 50px;
   border: 1.5px solid rgba(255, 255, 255, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
@@ -299,18 +325,18 @@
 /* Dropdown Premium Styling */
 .header-dropdown {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 4px);
   right: 0;
   background: white;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18), 0 0 1px rgba(0,0,0,0.1);
   min-width: 280px;
   padding: 0;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: var(--z-dropdown);
+  transform: translateY(-8px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9999;
   overflow: hidden;
 }
 
@@ -379,6 +405,14 @@
   border: 1px solid #e2e8f0;
 }
 
+.role-text-simple {
+  color: #9ca3af;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .dropdown-content-inner {
   padding: 8px;
 }
@@ -399,6 +433,10 @@
   border-radius: 8px;
   text-wrap: balance; /* Prevent orphans */
   line-height: 1.3;
+}
+
+.text-orange {
+  color: #f26522 !important;
 }
 
 .dropdown-item:hover {

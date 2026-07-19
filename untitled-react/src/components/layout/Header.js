@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import MentorSubNav from './MentorSubNav';
 import './Header.css';
+import iconBell from '../../assets/icon-bell.png';
 
 const NAV_LINKS = [
   { path: '/', label: 'Trang Chủ' },
@@ -69,12 +70,13 @@ const Header = () => {
                 <span className="lang-active">EN</span> | <span>VI</span>
               </button>
 
-              <div className="header-user-group" ref={dropdownRef}>
-                <button 
-                  className="header-system-btn" 
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
+              <div className="header-user-wrapper" ref={dropdownRef} style={{ position: 'relative' }}>
+                <div className="header-user-group">
+                  <button 
+                    className="header-bell-btn" 
+                  aria-label="Notifications"
                 >
-                  HỆ THỐNG
+                  <img src={iconBell} alt="Notifications" className="header-bell-icon" />
                 </button>
 
                 <button
@@ -85,6 +87,7 @@ const Header = () => {
                 >
                   <img src={currentUser.avatar} alt="User avatar" />
                 </button>
+                </div>
 
                 <div className={`header-dropdown ${dropdownOpen ? 'open' : ''} ${currentUser.role}`}>
                   {currentUser.role === 'guest' ? (
@@ -108,22 +111,14 @@ const Header = () => {
                       <div className="header-dropdown-header">
                         <div className="header-dropdown-name">{currentUser.name}</div>
                         <div className="header-dropdown-roles">
-                          <span className="role-badge role-alumni">Alumni</span>
-                          <span className="role-badge role-mentor">Mentor</span>
+                          <span className="role-text-simple">MENTOR</span>
                         </div>
                       </div>
                       <div className="dropdown-content-inner">
-                        <Link to="/dashboard" className="dropdown-item" onClick={() => setDropdownOpen(false)}>
-                          Trang quản lý
-                        </Link>
                         <Link to="/profile" className="dropdown-item" onClick={() => setDropdownOpen(false)}>
                           Hồ sơ cá nhân
                         </Link>
-                        <Link to="/settings" className="dropdown-item" onClick={() => setDropdownOpen(false)}>
-                          Cài đặt
-                        </Link>
-                        <div className="divider" />
-                        <button className="logout dropdown-item" onClick={() => {
+                        <button className="logout dropdown-item text-orange" onClick={() => {
                           logout();
                           setDropdownOpen(false);
                         }}>
@@ -196,9 +191,9 @@ const Header = () => {
             </nav>
           </div>
         </div>
+        
+        {currentUser.role === 'alumni_mentor' && <MentorSubNav />}
       </header>
-
-      {currentUser.role === 'alumni_mentor' && <MentorSubNav />}
 
       {/* Mobile Navigation Overlay */}
       <div className={`mobile-nav-overlay ${mobileMenuOpen ? 'open' : ''}`}

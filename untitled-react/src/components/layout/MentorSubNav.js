@@ -3,10 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import './MentorSubNav.css';
 
 const MENTOR_NAV_ITEMS = [
-  { path: '/', label: 'Tìm kiếm Mentee', icon: '🔍' },
-  { path: '/mentor/connections', label: 'Mentee của tôi', icon: '👥' },
-  { path: '/mentor/schedule', label: 'Lịch hẹn', icon: '📅' },
-  { path: '/mentor/reviews', label: 'Đánh giá', icon: '⭐' },
+  { path: '/mentees/search', label: 'Tìm kiếm Mentee', icon: '🔍' },
+  { path: '/mentees/applications', label: 'Đơn đăng ký', icon: '📋' },
+  { path: '/mentees/manage', label: 'Quản lý Mentee', icon: '👥' },
 ];
 
 const MentorSubNav = () => {
@@ -14,7 +13,7 @@ const MentorSubNav = () => {
 
   return (
     <div className="mentor-subnav">
-      <div className="header-inner">
+      <div className="mentor-subnav-inner">
         <nav className="mentor-subnav-list">
           {MENTOR_NAV_ITEMS.map((item) => (
             <Link

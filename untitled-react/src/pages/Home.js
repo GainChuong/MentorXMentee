@@ -70,16 +70,7 @@ const Home = () => {
     setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
   };
 
-  // If Mentor, show the Dashboard view
-  if (currentUser.role === 'alumni_mentor') {
-    return (
-      <div className="home-page mentor-view">
-        <MenteeSearch />
-      </div>
-    );
-  }
-
-  // Standard View for Guests/Alumni
+  // Standard View with optional Mentor Sub-navbar
   return (
     <div className="home-page">
       {/* Hero Banner */}
