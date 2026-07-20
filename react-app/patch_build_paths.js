@@ -94,6 +94,11 @@ codeFiles.forEach(file => {
     return `url("${TARGET_PREFIX}${filename}")`;
   });
 
+  // Replace webpack static/media references to use absolute TARGET_PREFIX
+  content = content.replace(/"static\/media\//g, `"${TARGET_PREFIX}static/media/`);
+  content = content.replace(/'static\/media\//g, `'${TARGET_PREFIX}static/media/`);
+  content = content.replace(/url\((["']?)static\/media\//g, `url($1${TARGET_PREFIX}static/media/`);
+
   if (content !== original) {
     fs.writeFileSync(file, content, 'utf8');
     totalPatches++;
