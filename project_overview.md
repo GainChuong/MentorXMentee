@@ -12,7 +12,7 @@
 d:\Cựu SV\
 ├── docs/
 │   ├── WORDPRESS_GUIDE.md          # Hướng dẫn chi tiết thiết lập & triển khai ứng dụng lên WordPress
-│   └── project_overview.md         # Tài liệu tổng quan kiến trúc dự án (File này)
+│   └── project_overview.md         # Tài liệu tổng quan kiến trúc dự án
 ├── php/
 │   ├── page-mentor-app.php          # File PHP Page Template dùng nhúng ứng dụng React vào Theme WordPress
 │   ├── page-mentor-app-canvas.php   # Template canvas dạng Blank dành cho giao diện tràn viền
@@ -55,7 +55,7 @@ d:\Cựu SV\
 │               ├── MenteeCalendar.js / .css     # Quản lý lịch hẹn & các buổi Mentorship (Sessions)
 │               ├── MenteeManage.js / .css       # Bảng điều khiển (Dashboard) quản lý dành cho Mentor
 │               └── MenteeManageSlots.js / .css  # Quản lý các khung giờ trống khả dụng của Mentor
-└── project_overview.md              # Bản sao tài liệu tổng quan tại thư mục gốc
+└── project_overview.md              # Bản sao tài liệu tổng quan tại thư mục gốc (File này)
 ```
 
 ---
