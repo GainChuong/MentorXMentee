@@ -1,3 +1,23 @@
+/* global __webpack_public_path__:writable */
+if (typeof window !== 'undefined') {
+  try {
+    const scripts = document.getElementsByTagName('script');
+    for (let i = 0; i < scripts.length; i++) {
+      const src = scripts[i].src || '';
+      if (src.includes('/static/js/main.')) {
+        const url = new URL(src);
+        const idx = url.pathname.indexOf('/static/js/');
+        if (idx !== -1) {
+          __webpack_public_path__ = url.pathname.substring(0, idx + 1);
+          break;
+        }
+      }
+    }
+  } catch (e) {
+    __webpack_public_path__ = '/giangk244111398/mentor-app/';
+  }
+}
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {
