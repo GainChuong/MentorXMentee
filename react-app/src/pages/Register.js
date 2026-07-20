@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/layout/Header';
+import bgImg from '../assets/rectangle1191143-ptu-600h.png';
+import logoImg from '../assets/uel11143-imot-200h.png';
 import './Auth.css';
 
 const Register = () => {
@@ -11,12 +13,12 @@ const Register = () => {
 
   return (
     <div className="login-page">
-      <img src="./rectangle1191143-ptu-600h.png" alt="" className="login-bg" aria-hidden="true"/>
+      <img src={bgImg} alt="" className="login-bg" aria-hidden="true"/>
       <Header />
       <div className="login-content">
         <div className="login-card">
           <div className="login-card-logo">
-            <img src="./uel11143-imot-200h.png" alt="UEL"/>
+            <img src={logoImg} alt="UEL"/>
             <h1>Đăng Ký</h1>
             <p>Tạo tài khoản Mentor x Mentee</p>
           </div>

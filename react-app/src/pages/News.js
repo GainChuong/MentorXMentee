@@ -2,10 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import './News.css';
 
+// Import image assets directly from src/assets for Webpack bundling
+import rect46 from '../assets/Rectangle 46.png';
+import rect50 from '../assets/Rectangle 50.png';
+import rect59 from '../assets/Rectangle 59.png';
+import rect64 from '../assets/Rectangle 64.png';
+import rect119 from '../assets/Rectangle 119.png';
+import rect120 from '../assets/Rectangle 120.png';
+import rect121 from '../assets/Rectangle 121.png';
+import rect124 from '../assets/Rectangle 124.png';
+import rect126 from '../assets/Rectangle 126.png';
+import rect128 from '../assets/Rectangle 128.png';
+
 const NEWS_ITEMS = [
   {
     id: 1,
-    image: '/Rectangle 46.png',
+    image: rect46,
     date: '20.04.2026',
     title: 'Chúc mừng Cựu sinh viên Mai Thị Huỳnh Như đạt giải Bạc (Silver Winner) tại Vietnam Young Lions 2026',
     desc: 'Chị Mai Thị Huỳnh Như – cựu sinh viên Khoa Hệ thống Thông tin – cùng đồng đội tại Team 97 (Home Credit Vietnam) đã xuất sắc giành giải Silver Winner hạng mục Marketers tại Vietnam Young Lions 2026. Đây là cuộc thi tìm kiếm tài năng trẻ uy tín nhất ngành Marketing & Communication, nhằm tìm kiếm đại diện Việt Nam tham dự Young Lions tại Cannes (Pháp).',
@@ -13,7 +25,7 @@ const NEWS_ITEMS = [
   },
   {
     id: 2,
-    image: '/Rectangle 120.png',
+    image: rect120,
     date: '16.12.2025',
     title: 'Chúc mừng hai Tân Phó Giáo sư của Khoa Hệ thống Thông tin: PGS.TS Lê Hoành Sử và PGS.TS Hồ Trung Thành',
     desc: 'Ngày 15/12/2025, Trường ĐH Kinh tế - Luật chính thức ký Quyết định bổ nhiệm chức danh Phó Giáo sư đối với PGS.TS Lê Hoành Sử – Trưởng Khoa Hệ thống Thông tin và PGS.TS Hồ Trung Thành – Giảng viên cao cấp của Khoa. Đây là hai PGS.TS đầu tiên của Khoa HTTT, là niềm tự hào và nguồn cảm hứng lớn lao cho các thế hệ giảng viên, sinh viên trong hành trình chinh phục những đỉnh cao tri thức.',
@@ -21,14 +33,14 @@ const NEWS_ITEMS = [
   },
   {
     id: 3,
-    image: '/Rectangle 121.png',
+    image: rect121,
     date: '23.12.2025',
     title: 'Chúc mừng Cựu sinh viên Bằng Nhân Trí đoạt giải Quán quân Global Leadership Challenge 2025',
     desc: 'Anh Bằng Nhân Trí - cựu sinh viên K20 lớp Cử nhân tài năng Thương mại điện tử UEL - đã xuất sắc trở thành một trong ba đại diện Việt Nam giành ngôi vị Quán quân tại GLC 2025 do Đại học Oxford tổ chức. Với giải pháp chiến lược cho tập đoàn bán lẻ quốc tế Lidl (Đức), Trí đã vượt qua hàng ngàn thí sinh từ các trường đại học danh giá nhất thế giới như Oxford, Cambridge, Harvard để khẳng định bản lĩnh của nhà lãnh đạo tương lai.'
   },
   {
     id: 4,
-    image: '/Rectangle 50.png',
+    image: rect50,
     date: '27-28.11.2025',
     title: 'Dấu ấn sinh viên UEL tại Diễn đàn Cộng đồng Học thuật SAP Việt Nam 2025',
     desc: 'Trong hai ngày 27-28/11/2025 vừa qua, tại Đại học Bách Khoa Hà Nội, nhóm sinh viên thuộc Khoa Hệ thống Thông tin, Trường Đại học Kinh tế - Luật (UEL), ĐHQG-HCM đã có màn thể hiện xuất sắc trong khuôn khổ sự kiện "SAP Academic Community Seminar Vietnam 2025". Với chủ đề "Khai thác SAP Learning Hub, Student Edition", nhóm đã thực hiện thành công các phiên tham luận chuyên sâu về Public Cloud và demo trực tiếp trên hệ thống.',
@@ -36,21 +48,21 @@ const NEWS_ITEMS = [
   },
   {
     id: 5,
-    image: '/Rectangle 124.png',
+    image: rect124,
     date: '28.03.2025',
     title: 'Khoa Hệ thống thông tin: Chuỗi hoạt động kết nối sinh viên và định hướng tương lai',
     desc: 'Nhằm thắt chặt tình cảm giữa các thế hệ người học, Khoa HTTT đã tổ chức thành công chuỗi sự kiện gặp gỡ, tư vấn hướng nghiệp và chia sẻ kinh nghiệm thực tiễn. Đây là dịp để các cựu sinh viên đang làm việc tại các vị trí quan trọng quay lại hỗ trợ, dẫn dắt các thế hệ đàn em trên con đường phát triển sự nghiệp.'
   },
   {
     id: 6,
-    image: '/Rectangle 126.png',
+    image: rect126,
     date: '20.03.2025',
     title: 'Gặp gỡ và tri ân đội ngũ Giảng viên, Thư ký Khoa Hệ thống thông tin',
     desc: 'Buổi gặp mặt thân mật đã diễn ra trong không khí ấm cúng, là dịp để các cựu sinh viên bày tỏ lòng tri ân sâu sắc đến những người thầy, người cô đã tận tâm dạy dỗ. Những kỷ niệm đẹp dưới mái trường UEL một lần nữa được khơi lại, nhắc nhở về giá trị của sự kết nối và biết ơn trong cộng đồng Alumni.'
   },
   {
     id: 7,
-    image: '/Rectangle 128.png',
+    image: rect128,
     date: '15.03.2025',
     title: 'Đội văn nghệ IAT ghi dấu ấn đậm nét tại Hội diễn Văn nghệ UEL 2025',
     desc: 'Với sự đầu tư công phu về cả nội dung lẫn hình thức, đội văn nghệ cựu sinh viên IAT đã mang đến những tiết mục đặc sắc, kết hợp nhuần nhuyễn giữa truyền thống và hiện đại. Thành tích giải Nhất toàn đoàn là minh chứng cho tinh thần nhiệt huyết và tài năng đa dạng của cộng đồng cựu người học Khoa HTTT.'
@@ -60,7 +72,7 @@ const NEWS_ITEMS = [
 const EVENT_ITEMS = [
   {
     id: 101,
-    image: '/Rectangle 59.png',
+    image: rect59,
     date: '09.05.2026',
     title: '[ NGÀY VỀ 2026 | THANH ÂM RỰC RỠ ] CHÍNH THỨC KHỞI ĐỘNG',
     desc: 'Hành trình 23 năm của Khoa Hệ thống thông tin - Trường Đại học Kinh tế - Luật là một bản giao hưởng được viết nên từ hàng vạn dải tần số khác nhau. Ngày Về 2026 chính là điểm hẹn để những thanh âm ấy cùng hội ngộ, là thời khắc để ta cùng nhìn lại hành trình đầy tự hào.',
@@ -69,14 +81,14 @@ const EVENT_ITEMS = [
   },
   {
     id: 102,
-    image: '/681212572_1360495922778615_7166935161293770380_n.jpg',
+    image: rect121,
     date: '01.05.2026',
     title: 'Chiến dịch tình nguyện "Hoa Mộc Miên" lần thứ VIII',
     desc: 'Chiến dịch tình nguyện "Hoa Mộc Miên" lần thứ VIII chính thức được thắp lên như một ngọn lửa được truyền qua tám thế hệ, mỗi lần bùng cháy lại ấm hơn, sáng hơn. Lần này, chúng ta không chỉ tiếp bước — chúng ta nâng bước.'
   },
   {
     id: 103,
-    image: '/toadam.png',
+    image: rect120,
     date: '21.03.2026',
     title: 'Tọa đàm: Các hướng nghiên cứu ứng dụng trong đào tạo cao học và nghiên cứu sinh HTTT & TMĐT',
     desc: 'Đăng ký ngay tọa đàm để tìm hiểu về các hướng nghiên cứu ứng dụng thực tiễn trong lĩnh vực Hệ thống thông tin và Thương mại điện tử. Hạn đăng ký: 19/03/2026.',
@@ -85,7 +97,7 @@ const EVENT_ITEMS = [
   },
   {
     id: 104,
-    image: '/Rectangle 64.png',
+    image: rect64,
     date: '12.05.2026',
     title: 'Lễ Tốt nghiệp 2026 Khoa Hệ thống thông tin',
     desc: 'Ngày hội vinh danh những tân khoa xuất sắc đã hoàn thành chặng đường học tập tại Khoa HTTT. Đây cũng là dịp để cộng đồng Alumni chào đón những thành viên mới gia nhập mạng lưới.'
@@ -124,7 +136,7 @@ const News = () => {
     <div className="news-page">
       {/* Hero Banner */}
       <section className="news-hero-banner">
-        <img src="./Rectangle 119.png" alt="News hero" className="news-hero-img" />
+        <img src={rect119} alt="News hero" className="news-hero-img" />
         <div className="news-hero-overlay" />
         <div className="news-hero-text">
           <h1>TIN TỨC & SỰ KIỆN</h1>
