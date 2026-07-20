@@ -4,6 +4,7 @@ import React, { createContext, useState, useContext } from 'react';
 import menteeBao from '../assets/mentee-bao.png';
 import menteeNhi from '../assets/mentee-nhi.jpg';
 import menteeGiang from '../assets/mentee-giang.jpg';
+import defaultAvatar from '../assets/avatar-male-1.png';
 
 const UserContext = createContext();
 
@@ -19,7 +20,7 @@ export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({
     role: 'guest',
     name: 'Khách',
-    avatar: '/untitled10611143-dj2u-200h.png'
+    avatar: defaultAvatar
   });
 
   // Manage mentees state
@@ -46,7 +47,7 @@ export const UserProvider = ({ children }) => {
     setCurrentUser({
       role: 'alumni_mentor',
       name: 'Anh Bằng Nhân Trí',
-      avatar: '/untitled10611143-dj2u-200h.png'
+      avatar: defaultAvatar
     });
   };
 
@@ -54,7 +55,7 @@ export const UserProvider = ({ children }) => {
     setCurrentUser({
       role: 'guest',
       name: 'Khách',
-      avatar: '/untitled10611143-dj2u-200h.png'
+      avatar: defaultAvatar
     });
   };
 

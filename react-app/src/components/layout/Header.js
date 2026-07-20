@@ -4,6 +4,7 @@ import { useUser } from '../../context/UserContext';
 import MentorSubNav from './MentorSubNav';
 import './Header.css';
 import iconBell from '../../assets/icon-bell.png';
+import uelLogo from '../../assets/uel11143-imot-200h.png';
 
 const NAV_LINKS = [
   { path: '/', label: 'Trang Chủ' },
@@ -147,7 +148,7 @@ const Header = () => {
           <div className="header-inner">
             <div className="header-logo-section">
               <Link to="/" className="header-logo">
-                <img src="./uel11143-imot-200h.png" alt="UEL Logo" />
+                <img src={uelLogo} alt="UEL Logo" />
               </Link>
               <div className="header-logo-text">
                 <span className="dept-name">KHOA HỆ THỐNG THÔNG TIN</span>
