@@ -4,7 +4,7 @@ import { useUser } from '../context/UserContext';
 import './Home.css';
 
 // Import image assets directly from src/assets for Webpack bundling & hash optimization
-import heroBia1 from '../assets/Bìa 1.png';
+import heroBia1 from '../assets/bia-1.png';
 import heroCuuNguoiHoc from '../assets/cuu-nguoi-hoc-uel.jpg';
 import rect46 from '../assets/Rectangle 46.png';
 import rect50 from '../assets/Rectangle 50.png';
