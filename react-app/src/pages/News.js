@@ -3,16 +3,19 @@ import { Link, useLocation, useHistory } from 'react-router-dom';
 import './News.css';
 
 // Import image assets directly from src/assets for Webpack bundling
-import rect46 from '../assets/Rectangle 46.png';
-import rect50 from '../assets/Rectangle 50.png';
-import rect59 from '../assets/Rectangle 59.png';
-import rect64 from '../assets/Rectangle 64.png';
-import rect119 from '../assets/Rectangle 119.png';
-import rect120 from '../assets/Rectangle 120.png';
-import rect121 from '../assets/Rectangle 121.png';
-import rect124 from '../assets/Rectangle 124.png';
-import rect126 from '../assets/Rectangle 126.png';
-import rect128 from '../assets/Rectangle 128.png';
+import rect46 from '../assets/rect-46.png';
+import rect50 from '../assets/rect-50.png';
+import rect59 from '../assets/rect-59.png';
+import rect64 from '../assets/rect-64.png';
+import rect119 from '../assets/rect-119.png';
+import rect120 from '../assets/rect-120.png';
+import rect121 from '../assets/rect-121.png';
+import rect124 from '../assets/rect-124.png';
+import rect126 from '../assets/rect-126.png';
+import rect128 from '../assets/rect-128.png';
+import toadam from '../assets/toadam.png';
+import hoaMocMien from '../assets/hoa-moc-mien.jpg';
+
 
 const NEWS_ITEMS = [
   {
@@ -81,14 +84,14 @@ const EVENT_ITEMS = [
   },
   {
     id: 102,
-    image: rect121,
+    image: hoaMocMien,
     date: '01.05.2026',
     title: 'Chiến dịch tình nguyện "Hoa Mộc Miên" lần thứ VIII',
     desc: 'Chiến dịch tình nguyện "Hoa Mộc Miên" lần thứ VIII chính thức được thắp lên như một ngọn lửa được truyền qua tám thế hệ, mỗi lần bùng cháy lại ấm hơn, sáng hơn. Lần này, chúng ta không chỉ tiếp bước — chúng ta nâng bước.'
   },
   {
     id: 103,
-    image: rect120,
+    image: toadam,
     date: '21.03.2026',
     title: 'Tọa đàm: Các hướng nghiên cứu ứng dụng trong đào tạo cao học và nghiên cứu sinh HTTT & TMĐT',
     desc: 'Đăng ký ngay tọa đàm để tìm hiểu về các hướng nghiên cứu ứng dụng thực tiễn trong lĩnh vực Hệ thống thông tin và Thương mại điện tử. Hạn đăng ký: 19/03/2026.',

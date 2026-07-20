@@ -55,8 +55,8 @@ allBuildFiles.forEach(file => {
 
 console.log(`Found ${assetFiles.size} unique asset references to track.`);
 
-// Get all JS, CSS, HTML files in build
-const codeFiles = allBuildFiles.filter(file => /\.(html|js|css)$/.test(file));
+// Get all CSS, HTML files in build (JS is handled natively via absolute public path)
+const codeFiles = allBuildFiles.filter(file => /\.(html|css)$/.test(file));
 
 let totalPatches = 0;
 

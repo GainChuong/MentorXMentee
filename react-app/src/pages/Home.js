@@ -6,16 +6,19 @@ import './Home.css';
 // Import image assets directly from src/assets for Webpack bundling & hash optimization
 import heroBia1 from '../assets/bia-1.png';
 import heroCuuNguoiHoc from '../assets/cuu-nguoi-hoc-uel.jpg';
-import rect46 from '../assets/Rectangle 46.png';
-import rect50 from '../assets/Rectangle 50.png';
-import rect59 from '../assets/Rectangle 59.png';
-import rect64 from '../assets/Rectangle 64.png';
-import rect69 from '../assets/Rectangle 69.png';
-import rect70 from '../assets/Rectangle 70.png';
-import rect75 from '../assets/Rectangle 75.png';
-import rect120 from '../assets/Rectangle 120.png';
-import rect121 from '../assets/Rectangle 121.png';
-import rect128 from '../assets/Rectangle 128.png';
+import rect46 from '../assets/rect-46.png';
+import rect50 from '../assets/rect-50.png';
+import rect59 from '../assets/rect-59.png';
+import rect64 from '../assets/rect-64.png';
+import rect69 from '../assets/rect-69.png';
+import rect70 from '../assets/rect-70.png';
+import rect75 from '../assets/rect-75.png';
+import rect120 from '../assets/rect-120.png';
+import rect121 from '../assets/rect-121.png';
+import rect128 from '../assets/rect-128.png';
+import toadam from '../assets/toadam.png';
+import hoaMocMien from '../assets/hoa-moc-mien.jpg';
+
 
 // Import alumni avatars
 import avatarTri from '../assets/avatar-male-1.png';
@@ -195,14 +198,14 @@ const Home = () => {
               {/* Sub Events List */}
               <div className="sub-events-list">
                 <Link to="/news/103" className="sub-event-item">
-                  <div className="sub-event-img"><img src={rect120} alt="Tọa đàm" /></div>
+                  <div className="sub-event-img"><img src={toadam} alt="Tọa đàm" /></div>
                   <div className="sub-event-content">
                     <span className="tag-orange-bg">21.03.2026</span>
                     <h4>Tọa đàm: Các hướng nghiên cứu ứng dụng trong đào tạo HTTT & TMĐT</h4>
                   </div>
                 </Link>
                 <Link to="/news/102" className="sub-event-item">
-                  <div className="sub-event-img"><img src={rect121} alt="Hoa Mộc Miên" /></div>
+                  <div className="sub-event-img"><img src={hoaMocMien} alt="Hoa Mộc Miên" /></div>
                   <div className="sub-event-content">
                     <span className="tag-orange-bg">01.05.2026</span>
                     <h4>Chiến dịch tình nguyện "Hoa Mộc Miên" lần thứ VIII</h4>
